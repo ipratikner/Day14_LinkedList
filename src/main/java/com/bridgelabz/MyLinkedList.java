@@ -84,4 +84,16 @@ public class MyLinkedList {
         }
         return tempNode;
     }
+    //add after 30
+    public void addAfter(INode newNode) {
+        INode tempNode = this.head;
+        while(tempNode !=null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(30)) {
+                newNode.setNext(tempNode.getNext());
+                tempNode.setNext(newNode);
+                break;
+            } else
+                tempNode = tempNode.getNext();
+        }
+    }
 }
