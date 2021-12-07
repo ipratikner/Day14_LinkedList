@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 public class MyLinkedList {
-    //public INode tail;
     public INode head;
     public INode tail;
 
@@ -10,7 +9,7 @@ public class MyLinkedList {
         this.tail = null;
     }
 
-    //adding new node
+    //adding new node to linkedList
     public void add(INode newNode) {
         if (this.tail == null){
             this.tail = newNode;
@@ -23,6 +22,19 @@ public class MyLinkedList {
             this.head.setNext(tempNode);
         }
     }
+    //appending node in linkedList
+    public void append(INode newNode) {
+        if (this.tail == null) {
+            this.tail = newNode;
+        }
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+
     //printing nodes
     public void printmyNodes(){
         StringBuffer myNodes = new StringBuffer("My Nodes :");
