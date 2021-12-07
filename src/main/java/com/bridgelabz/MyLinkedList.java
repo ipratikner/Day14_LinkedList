@@ -41,6 +41,7 @@ public class MyLinkedList {
         newNode.setNext(tempNode);
     }
 
+
     //printing nodes
     public void printmyNodes(){
         StringBuffer myNodes = new StringBuffer("My Nodes :");
@@ -52,5 +53,11 @@ public class MyLinkedList {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
+    }
+
+    //pop method for deleting first elements from linkedList
+    public void pop(INode newNode) {
+        INode tempNode = newNode;
+        this.head = tempNode.getNext();
     }
 }
