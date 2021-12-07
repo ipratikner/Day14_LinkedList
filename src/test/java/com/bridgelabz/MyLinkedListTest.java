@@ -94,4 +94,21 @@ public class MyLinkedListTest {
         Assertions.assertTrue(result);
 
     }
+    //UC7 :search elements
+    @Test
+    public void given3Numbers_searchNumber_ShouldBeFound() {
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.printmyNodes();
+        INode foundNode = myLinkedList.searchNode(mySecondNode);
+
+        boolean result = foundNode.equals(mySecondNode);
+        Assertions.assertTrue(result);
+
+    }
 }
